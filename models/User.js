@@ -1,6 +1,6 @@
 // taking the Model and DataTypes (so we know the data type is a string/integer) object sequelize gives out; destructuring
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const sequelize = require("../config/connect");
 const bcrypt = require("bcrypt");
 
 class User extends Model {
