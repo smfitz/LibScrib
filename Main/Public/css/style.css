@@ -1,0 +1,13 @@
+.header {
+  overflow: auto;
+  width: 100%;
+  text-align: center;
+  background: #3d1abc;
+  color: white;
+  font-size: 20px;
+  font-family: 'Irish Grover';
+}
+
+.search {
+    text-align: center;
+}
