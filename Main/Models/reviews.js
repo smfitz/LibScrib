@@ -2,17 +2,21 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connect");
 
-class Post extends Model {
+class Review extends Model {
   // extra methods will go here
 }
 
-Post.init(
+Review.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
+    },
+    isbn: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     title: {
       type: DataTypes.STRING,
@@ -35,8 +39,8 @@ Post.init(
     // when the table name is pluralized, it leads to some issues in sequelize, so the table name must be "frozen"
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: "review",
   }
 );
 
-module.exports = Post;
+module.exports = Review;
