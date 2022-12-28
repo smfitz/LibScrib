@@ -1,13 +1,61 @@
+/* Universal Elements */
+:root {
+    --primary: 
+    --secondary: 
+    --hoverColor: 
+    --light-dark: 
+    --dark:
+    --mid-dark:
+    --background: 
+    --border-radius: .3rem;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Header & Sub-Header */
+
 .header {
-    overflow: auto;
+    display: flex;
+    justify-content: center;
     width: 100%;
     text-align: center;
     background: #3d1abc;
     color: white;
-    font-size: 20px;
-    font-family: 'Irish Grover';
+    font-size: 26px;
+    font-family: monospace, sans-serif;
   }
-  
-  .search {
-      text-align: center;
+
+.sub-header {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-family: monospace, sans-serif;
+    padding: 2%;
   }
+
+/* Main Search Bar Functionality */
+
+#search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.main-search {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    width: 50%;
+    line-height: 30px;
+    font-family: monospace, sans-serif;
+    font-size: 1.2rem;
+    padding: 10 20px;
+    min-width: 100px;
+    height: 40px;
+    line-height: 20px;
+    outline:none;
+    
+}
+
