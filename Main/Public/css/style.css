@@ -9,9 +9,19 @@
     --background: 
     --border-radius: .3rem;
 }
+.home-background {
+    background-image: url('../../Assets/img/alexander-wende-IQuzsQv_bO4-unsplash.jpg');
+    background-size: 1920px, 1080px;
+}
 
 .hidden{
     display: none;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header & Sub-Header */
@@ -19,7 +29,6 @@
 .header {
     display: flex;
     justify-content: center;
-    width: 100%;
     text-align: center;
     background: #3d1abc;
     color: white;
@@ -59,3 +68,40 @@
     
 }
 
+/* Main Search Button */
+
+.main-search-btn {
+    display: flex;
+    background-color: #FFFFFF;
+    justify-content: center;
+}
+ 
+/* Footer */
+
+footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center; 
+}
+
+/* Book Images */
+
+.searchImages {
+    display: block;
+    max-width: 644px;
+    max-height: auto;
+    width: auto;
+    height: auto;
+}
+.card-body {
+    background-color: #3d1abc;
+    display: flex;
+    justify-content: center;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 4px;
+}

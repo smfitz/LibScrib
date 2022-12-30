@@ -12,23 +12,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Mukta:wght@300&family=Teko&display=swap" rel="stylesheet">
     <!-- linked local files -->
     <title>LibScrib</title>
-    <script src="./Main/Public/js/index.js" defer></script>
+    <script src="./Main/Assets/js/script.js" defer></script>
   </head>
 
   <body>
     <!--Header & Sub-Header-->
+  <header>
     <section class="header">
       <h1>LibScrib</h1>
     </section>
     <section class="sub-header"
       <h3> Search for millions of books online, get suggestions, and leave reviews on books you've already read.</h3>
     </section>
+  </header>  
+    <div id="search-bar">
+      <input class="main-search" type="text" placeholder="Search by Title/Author/ISBN">
+      <button type="submit" class="main-search-btn" id="main-search-btn">Search</button>
+    </div>
 
-    <section id="search-bar">
-        <input class="main-search" type="text" placeholder="Search by Title/Author/ISBN">
+
+    <!-- Container for Main Search Result Card -->
+  <section class="container main-1" id="main-1">
+    <section class="row" id="row-1">
+      <section class="col-hidden" id="searchedBook">
+        <section class="main-card">
+          <img src="" class="main-img-card searchImages" id="searchedBookImage">
+          <section class="card-body" id="searchedBookBody">
+            <h4 class="card-title" id="seachedBookTitle">Search Results</h4>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+
+    <!-- Recomended Best Seller Cards -->
+    <section class="rec-best-sellers" id="recContainer">
+      <section class="row" id="noRecs">
+        <!-- Recomended Book Cards -->
+        <section class="row justify-content-center" id="recSection">
+        </section>
+      </section>
     </section>
 
 
+    <!-- footer -->
+    <footer>
+      <h6 class="main-footer">Developed by: Zachary Berkley, Adrian Carter, Emre Eyupoglue, Sean Fitzpatrick, Tessa Starkweather, & Kelly Williams</h6>
+    </footer>
   </body>
 
 
