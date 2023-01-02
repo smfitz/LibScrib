@@ -1,30 +1,214 @@
 /* Universal Elements */
 :root {
-    --primary: 
-    --secondary: 
-    --hoverColor: 
-    --light-dark: 
-    --dark:
-    --mid-dark:
-    --background: 
+    --text-primary: #003366;
+    --text-secondary: #71b1c5;
+    --bg-primary: #F0F2F3;
+    --bg-secondary: #71b1c5;
+    --primary: #003366;
+    --secondary: #CBE6EF;
+    --hoverColor: #71b1c5;
+    --light-dark: #CBE6EF;
+    --dark: #003366;
+    --background: #F0F2F3;
+    --transition-speed: 600ms;
     --border-radius: .3rem;
-}
-.home-background {
-    background-image: url('../../Assets/img/alexander-wende-IQuzsQv_bO4-unsplash.jpg');
-    background-size: 1920px, 1080px;
 }
 
 .hidden{
     display: none;
 }
 
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+img {
+    max-width: 100%;
 }
 
-/* Header & Sub-Header */
+body{
+    background-image: url('/Main/Assets/img/ugur-akdemir-XT-o5O458as-unsplash.jpg');
+    background-color: var(--bg-secondary);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+    animation: transitionIn 0.75s;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+/* Home page Header & Sub Header */
+
+.mid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    padding-top: 10rem;
+    padding-left: 14rem;
+    animation: transitionIn 1s;
+}
+
+.home-header {
+    font-size: 4rem;
+    color: var(--bg-primary);
+}
+
+.home-sub-header {
+    font-size: 1.5rem;
+    color: var(--bg-primary);
+}
+
+/* Cursor Blinking After Sub Header */
+
+.box h4::after {
+    content: "";
+    width: 0.3rem;
+    height: 1.24rem;
+    background: var(--bg-primary);
+    display: inline-block;
+    animation: transitionIn 1s;
+    animation: cursor-blink 1s infinite;
+}
+
+.box h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Home Page Info Cards */
+
+.home-info-cards {
+    color: var(--bg-primary);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+}
+
+.search-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid transparent;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    background-color: rgb(255, 255, 255 / 0.5);
+    border-radius: 2rem;
+    max-width: 18rem;
+    max-height: 18rem;
+    min-height: 18rem;
+    padding: 3rem;
+    margin: 2rem;
+    animation: transitionIn 4s;
+}
+
+.search-icon {
+    height: 34px;
+    width: 34px;
+    margin: 20px;
+    filter: invert(100%);
+}
+
+.search-card-text {
+    opacity: 0;
+    transition: 400ms;
+}
+
+.search-card:hover .search-card-text {
+    opacity: 1;
+}
+
+.search-card:hover {
+    transition: 400ms;
+    border: 3px solid var(--background);
+    backdrop-filter: blur(1.5px);
+
+}
+
+.read-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid transparent;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    background-color: rgb(255, 255, 255 / 0.5);
+    border-radius: 2rem;
+    max-width: 18rem;
+    max-height: 18rem;
+    min-height: 18rem;
+    padding: 3rem;
+    margin: 2rem;
+    animation: transitionIn 4s;
+}
+
+.read-icon {
+    height: 34px;
+    width: 34px;
+    margin: 20px;
+    filter: invert(100%);
+}
+
+.read-card-text {
+    opacity: 0;
+    transition: 400ms;
+}
+
+.read-card:hover .read-card-text {
+    opacity: 1;
+}
+
+.read-card:hover {
+    transition: 400ms;
+    border: 3px solid var(--background);
+    backdrop-filter: blur(1.5px);
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid transparent;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    background-color: rgb(255, 255, 255 / 0.5);
+    border-radius: 2rem;
+    max-width: 18rem;
+    max-height: 18rem;
+    min-height: 18rem;
+    padding: 3rem;
+    margin: 2rem;
+    animation: transitionIn 4s;
+}
+
+.review-icon {
+    height: 34px;
+    width: 34px;
+    margin: 20px;
+    filter: invert(100%);
+}
+
+.review-card-text {
+    opacity: 0;
+    transition: 400ms;
+}
+
+.review-card:hover .review-card-text {
+    opacity: 1;
+}
+
+.review-card:hover {
+    transition: 400ms;
+    border: 3px solid var(--background);
+    backdrop-filter: blur(1.5px);
+}
+
+/* Search Page Header & Sub-Header */
 
 .header {
     display: flex;
@@ -33,16 +217,125 @@ body{
     background: #3d1abc;
     color: white;
     font-size: 26px;
-    font-family: monospace, sans-serif;
-  }
+}
 
 .sub-header {
     display: flex;
     justify-content: center;
     font-size: 1.4rem;
-    font-family: monospace, sans-serif;
-    padding: 2%;
-  }
+    text-align: center;
+}
+
+/* Nav Bar Styling */
+
+.navbar {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.2rem;
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--text-primary);
+    transition: 400ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-item {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--hoverColor);
+    text-decoration: none;
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.link-text {
+    padding: 2rem;
+    display: none;
+}
+
+.navbar:hover .link-text {
+    display: block;
+    animation: transitionIn 1s;
+}
+
+/* Hardcoded Icon Display */
+
+.navbar:hover .fa-house {
+    animation: transitionIn 1s;
+}
+
+.fa-house {
+    padding: 1.7rem;
+}
+
+.navbar:hover .fa-magnifying-glass {
+    animation: transitionIn 1s;
+}
+
+.fa-magnifying-glass {
+    padding: 1.8rem;
+}
+
+.navbar:hover .fa-book {
+    animation: transitionIn 1s;
+}
+
+.fa-book {
+    padding: 1.9rem;
+}
+
+.navbar:hover .fa-user {
+    animation: transitionIn 1s;
+}
+
+.fa-user {
+    padding: 1.8rem;
+}
+
+/* Scrollbar Styling */
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scroll-bar-track {
+    background: var(--dark);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--bg-secondary);
+}
 
 /* Main Search Bar Functionality */
 
@@ -58,7 +351,6 @@ body{
     border-radius: 12px;
     width: 50%;
     line-height: 30px;
-    font-family: monospace, sans-serif;
     font-size: 1.2rem;
     padding: 10 20px;
     min-width: 100px;
@@ -104,4 +396,77 @@ footer {
     justify-content: center;
     text-align: center;
     padding: 4px;
+}
+
+/* Small Screen Navbar Support */
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+        
+    .navbar-nav {
+        flex-direction: row;
+    }
+    
+    .nav-link {
+        justify-content: center;
+    }
+    
+    main {
+        margin: 0;
+    }
+}
+
+/* Large Screen Navbar Support */
+
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+    
+    .navbar:hover {
+        width: 12rem;
+    }
+    
+    .navbar:hover .link-text {
+        display: block;
+    }
+}
+
+/* Main Header Small Screen Support */
+
+@media only screen and (max-width: 600px) {
+    .mid-container {
+        padding: 0;
+        margin: 0;
+    }
+}
+/* Animations */
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes cursor-blink {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+    
 }
