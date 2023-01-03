@@ -36,7 +36,6 @@ Review.init(
   {
     sequelize,
     timestamps: true,
-    // when the table name is pluralized, it leads to some issues in sequelize, so the table name must be "frozen"
     freezeTableName: true,
     underscored: true,
     modelName: "review",

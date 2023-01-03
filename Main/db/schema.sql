@@ -32,3 +32,4 @@ CREATE TABLE reviews (
     FOREIGN KEY (search_id)
     REFERENCES reviews(id)
     ON DELETE SET NULL
+);
