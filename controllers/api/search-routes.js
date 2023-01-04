@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const searchResults = require('../../Assets/js/script');
+const searchResults = require('../js/script');
 
 // get all books
 router.get('/results', async (req, res) => {

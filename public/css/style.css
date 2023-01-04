@@ -14,7 +14,7 @@
     --border-radius: .3rem;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -23,7 +23,7 @@ img {
 }
 
 body{
-    background-image: url('/Main/Assets/img/ugur-akdemir-XT-o5O458as-unsplash.jpg');
+    background-image: url('/Assets/img/ugur-akdemir-XT-o5O458as-unsplash.jpg');
     background-color: var(--bg-secondary);
     background-repeat: no-repeat;
     background-position: center center;
