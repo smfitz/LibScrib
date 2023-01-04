@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 
 // included for testing purposes
-const searchResults = require('../Assets/js/script');
+const searchResults = require('./js/script');
 
 router.get('/', async (req, res) => {
     try {
