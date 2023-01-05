@@ -33,6 +33,8 @@ body{
     margin: 0;
     padding: 0;
     animation: transitionIn 0.75s;
+   
+    
 }
 
 main {
@@ -468,5 +470,41 @@ footer {
     to {
         opacity: 100;
     }
+    
+}
+
+.bestseller-header {
+    font-size: 4rem;
+    color: var(--bg-primary);
+}
+
+.bs-sub-header {
+    font-size: 1.5rem;
+    color: var(--bg-primary);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    margin: 5px;
+    text-align: center;
+}
+
+.card-image {
+    background-color: gray;
+    height: 300px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.car-1 {
+    background-image: ;
+    background-size: cover;
     
 }
