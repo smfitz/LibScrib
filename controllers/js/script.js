@@ -1,25 +1,24 @@
 // var searchResults = [];
-// require('dotenv').config();
-
-// // NYT API key - figure out how to store this in the env
+// var bestSellersList = [];
 // // require('dotenv').config();
 
+
 // // API_KEY
-// // var nytApiKey = "PASTE KEY HERE";
-// var googleApiKey = "PASTE KEY HERE";
+// // var nytApiKey = "copy here";
+// // var googleApiKey = "copy here";
 
-// $(`#searchBtn`).on(`click`, function () {
-//   // stores the user search query in the variable 'bookTitle'
-//   var bookTitle = $(`#searchBox`).val();
-
-//   fetchBookByTitleGoogle(bookTitle);
-// });
+// // $(`#submit`).on('click', function () {
+// //   // stores the user search query in the variable 'bookTitle'
+// //   var bookTitle = $(`#search`).val();
+// //   // fetch data
+// //   fetchBookByTitleGoogle(bookTitle);
+// // });
 
 
 // // function to retrieve information for the user's requested book
 // var fetchBookByTitleGoogle = function (bookTitle) {
 //   // concatenates the API call, the bookTitle variable, and the apiKey variable into the apiBookTitle variable
-//   var apiBookTitle = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.API_KEY}`;
+//   var apiBookTitle = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${googleApiKey}`;
 
 //   // fetch request for the user's requested book
 //   fetch(apiBookTitle).then(function (response) {
@@ -84,6 +83,36 @@
 // //     }
 // //   });
 // // };
+
+
+// // Best Seller List NYT
+// var fetchBestSellersNYT = function () {
+//   var apiBestSell = `https://api.nytimes.com/svc/books/v3/lists.json?list-name=combined-print-and-e-book-fiction&api-key=${nytApiKey}`;
+
+//   fetch(apiBestSell, {
+//     method: 'get',
+//   })
+//   .then(response => { return response.json(); })
+//   .then(function(data) { 
+//     // console.log(data);
+//     for (var i = 0; i <= 5; i++) {
+//       var bestSeller = {};
+
+//       bestSeller["title"] = data.results[i].book_details[0].title;
+//       bestSeller["author"] = data.results[i].book_details[0].author;
+//       bestSeller["isbn"] = data.results[i].isbns[0].isbn13;
+
+//       bestSellersList.push(bestSeller);
+//     }
+//   })
+//   .catch((error) => console.error("Fetch Error:", error));
+// }
+
+// fetchBestSellersNYT();
+
+// console.log(bestSellersList);
+
+
 
 
 // module.exports = searchResults
