@@ -87,20 +87,21 @@ var fetchBookByTitleGoogle = function (bookTitle) {
 
 // Best Seller List NYT
 var fetchBestSellersNYT = function () {
-  var apiBestSell = `https://api.nytimes.com/svc/books/v3/lists.json?list-name=combined-print-and-e-book-fiction&api-key=${nytApiKey}`;
+  var apiBestSell = `https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=${nytApiKey}`
 
   fetch(apiBestSell, {
     method: 'get',
   })
   .then(response => { return response.json(); })
   .then(function(data) { 
-    // console.log(data);
-    for (var i = 0; i <= 5; i++) {
+    console.log(data);
+    for (var i = 0; i < 5; i++) {
       var bestSeller = {};
 
-      bestSeller["title"] = data.results[i].book_details[0].title;
-      bestSeller["author"] = data.results[i].book_details[0].author;
-      bestSeller["isbn"] = data.results[i].isbns[0].isbn13;
+      bestSeller["title"] = data.results.lists[0].books[i].title;
+      bestSeller["author"] = data.results.lists[0].books[i].author;
+      bestSeller["isbn"] = data.results.lists[0].books[i].primary_isbn13;
+      bestSeller["image"] = data.results.lists[0].books[i].book_image;
 
       bestSellersList.push(bestSeller);
     }
