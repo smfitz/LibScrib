@@ -466,6 +466,8 @@ body::-webkit-scrollbar-thumb {
 #search-bar {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-right: auto;
 }
 
 .main-search {
@@ -486,10 +488,8 @@ body::-webkit-scrollbar-thumb {
 
 /* Main Search Button */
 
-.main-search-btn {
-    display: flex;
-    background-color: #FFFFFF;
-    justify-content: center;
+button {
+background-color: var(--primary) !important;
 }
  
 /* Footer */
@@ -520,6 +520,11 @@ footer {
     justify-content: center;
     text-align: center;
     padding: 4px;
+}
+
+footer {
+    margin-top: 100% !important;
+    display: flex;
 }
 
 /* Small Screen Navbar Support */

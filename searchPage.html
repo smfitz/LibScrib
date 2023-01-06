@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/3fa854029c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./Main/Public/css/style.css" />
+    <link rel="stylesheet" href="./public/css/style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Mukta:wght@300&family=Teko&display=swap" rel="stylesheet">
@@ -18,18 +18,20 @@
 
   <body>
     <!--Header & Sub-Header-->
-  <header>
-    <section class="header">
-      <h1>LibScrib</h1>
-    </section>
-    <section class="sub-header"
-      <h3> Search for millions of books online, get suggestions, and leave reviews on books you've already read.</h3>
-    </section>
-  </header>  
-    <div id="search-bar">
-      <input class="main-search" type="text" placeholder="Search by Title/Author/ISBN">
-      <button type="submit" class="main-search-btn" id="main-search-btn">Search</button>
-    </div>
+    <div class="mid-img-container">
+      <div class="mid-container"> 
+          <h1 class="home-header" id="home-header">LibScrib</h1>
+            <span class="box">
+              <h4 class="home-sub-header" id="home-sub-header">Search for millions of books online, get suggestions, and leave reviews on books you've already read.</h4>
+            </span>
+          </div>
+          <div id="search-bar">
+            <input class="main-search" type="text" placeholder="Search by Title/Author/ISBN">
+            <button type="button" id="searchBtn" class="btn btn-primary"><i class="fas fa-search"></i></button>
+          </div>
+      </div>  
+      
+
 
 
     <!-- Container for Main Search Result Card -->
@@ -54,6 +56,30 @@
         </section>
       </section>
     </section>
+    <nav class="navbar">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                  <span class="link-text">Home</span>
+                  <i class="fa-solid fa-house"></i>
+              </a>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                  <span class="link-text">Search</span>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                  <span class="link-text">NYTBS</span>
+                  <i class="fa-solid fa-book"></i>
+              </a>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                  <span class="link-text">Profile</span>
+                  <i class="fa-solid fa-user"></i>
+              </a>
+      </ul>
+  </nav>
 
 
     <!-- footer -->
