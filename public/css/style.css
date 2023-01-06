@@ -483,28 +483,121 @@ footer {
     color: var(--bg-primary);
 }
 
-.container {
-    display: flex;
-    justify-content: center;
+/* Book Grid */
+
+/*@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');*/
+
+:root {
+  --color: #3c3163;
+  --transition-time: 0.5s;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+
+.cards-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 4rem;
+  margin: 0 auto;
+  width: max-content;
 }
 
 .card {
-    background-color: white;
-    width: 500px;
-    height: 300px;
-    margin: 5px;
-    text-align: center;
+  /*font-family: 'Heebo';*/
+  --bg-filter-opacity: 0.5;
+  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+  height: 20em;
+  width: 15em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  /*margin: 2em;*/
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em -1em black;
+  transition: all, var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #ccc;
+  text-decoration: none;
 }
 
-.card-image {
-    background-color: gray;
-    height: 300px;
-    margin: 10px;
-    margin-bottom: 20px;
+.card:hover {
+  transform: rotate(0);
 }
 
-.car-1 {
-    background-image: ;
-    background-size: cover;
-    
+
+.card .tags {
+  font-size: 0.75em;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.3rem;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  transition: all, var(--transition-time);
 }
+
+.card:hover .tags {
+  background: var(--color);
+  color: white;
+}
+
+
+
+.card:before, .card:after {
+  content: '';
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: -5;
+  transition: all, var(--transition-time);
+  transition-timing-function: ease-in-out;
+}
+
+.card:before {
+  background: #ddd;
+  width: 250%;
+  height: 250%;
+}
+
+.card:after {
+  background: white;
+  width: 200%;
+  height: 200%;
+}
+
+.card:hover {
+  color: var(--color);
+}
+
+.card:hover:before, .card:hover:after {
+  transform: scale(1);
+}
+
+.card-grid-space .num {
+  font-size: 3em;
+  margin-bottom: 1.2rem;
+  margin-left: 1rem;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
