@@ -23,9 +23,9 @@ const loader = new THREE.TextureLoader()
 // imgs from figma in img file
 
 const urls = [
-    "./public/img/long.png", "./public/img/spine.png",
-    "./public/img/top.png", "./public/img/bottom.png",
-    "./public/img/front-book.png", "./public/img/back-book.png"
+    "./img/long.png", "./img/spine.png",
+    "./img/top.png", "./img/bottom.png",
+    "./img/front-book.png", "./img/back-book.png"
 ]
 
 const materials = urls.map(url => {
