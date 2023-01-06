@@ -5,55 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/3fa854029c.js" crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="../../controllers/js/script.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Mukta:wght@300&family=Teko&display=swap" rel="stylesheet">
-
-
-    <title>Home</title>  
+    <title>User Page</title>
 </head>
-
-<body>
-    <!-- Main Page Header -->
-    <div class="mid-img-container">
-        <div class="mid-container"> 
-            <h1 class="home-header" id="home-header">LibScrib</h1>
-              <span class="box">
-                <h4 class="home-sub-header" id="home-sub-header">An all in one place for avid readers and reviewers alike</h4>
-              </span>
-        </div>  
-        <div class="home-info-cards">
-          <div class="search-card">
-            <img src="./img/magnifying-glass-solid.svg" alt="search-icon" class="search-icon">
-            <h3>Search</h3>
-              <div class="search-card-text">
-                <p>Search Across Millions of Audio & Physical Books</p>
-              </div>
-          </div>
-          <div class="read-card">
-            <img src="./img/book-solid.svg" alt="read-icon" class="read-icon">
-            <h3>Read</h3>
-              <div class="read-card-text">
-                <p>Pick From Best Sellers or Friend Recommendations</p>
-              </div>
-          </div>
-          <div class="review-card">
-            <img src="./img/pen-to-square-regular.svg" alt="review-icon" class="review-icon">
-            <h3>Review</h3>
-              <div class="review-card-text">
-                <p>Leave a Review And Let Others Know What You Thought of Your Reads</p>
-              </div>
-          </div>
-        </div>
+<body class="user-body">
+    <div class="user-head-container">
+            <h1 class="user-header" id="user-header">LibScrib</h1>
     </div>
-    <!-- Main NavBar -->
+    <div class="user-sub-header">
+        <h4 class="user-sub-header">Your Profile</h4>
+    </div>
+
+    <!-- Container -->
+  <div class="profile-cards">
+    <div class="user-info-card">
+        <h3>Account Details</h3>
+          <div class="user-info-card-text">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, adipisci. Incidunt ipsum reprehenderit sunt magni corrupti! Eaque quidem in, voluptates vitae recusandae quasi tempore asperiores debitis quibusdam ab nam similique.</p>
+          </div>
+      </div>
+      <div class="recent-review-card">
+        <h3>Recent Reviews</h3>
+          <div class="recent-review-text">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, adipisci. Incidunt ipsum reprehenderit sunt magni corrupti! Eaque quidem in, voluptates vitae recusandae quasi tempore asperiores debitis quibusdam ab nam similique.</p>
+          </div>
+      </div>
+  </div>
+
+
+
+<!-- Main NavBar -->
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -78,8 +64,5 @@
                 </a>
         </ul>
     </nav>
-
-
-
 </body>
 </html>

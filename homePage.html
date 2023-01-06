@@ -10,43 +10,49 @@
     <link rel="stylesheet" href="./public/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Mukta:wght@300&family=Teko&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
+    <script defer src="./public/js/index.js"></script>
+    <script defer src="./public/js/index.js"></script>
     <title>Home</title>  
 </head>
+<div class="container">
+  <!-- ANIMATION -->
+</div>
 
-<body>
-    <!-- Main Page Header -->
-    <div class="mid-img-container">
-        <div class="mid-container"> 
-            <h1 class="home-header" id="home-header">LibScrib</h1>
-              <span class="box">
-                <h4 class="home-sub-header" id="home-sub-header">An all in one place for avid readers and reviewers alike</h4>
-              </span>
-        </div>  
+<div class="scroll">
+  <img src="./public/img/chevron-down-solid.svg" class="scroll-icon" alt="scroll-img">
+</div>
+
+
+<body class="home-body">
         <div class="home-info-cards">
           <div class="search-card">
-            <img src="/Assets/img/magnifying-glass-solid.svg" alt="search-icon" class="search-icon">
+            <img src="/Assets/img/book-solid.svg" alt="search-icon" class="search-icon">
+          <div class="search-card hidden">
+            <img src="/public/img/magnifying-glass-solid.svg" alt="search-icon" class="search-icon">
+
             <h3>Search</h3>
-              <div class="search-card-text">
+              <div class="search-card-text hidden">
                 <p>Search Across Millions of Audio & Physical Books</p>
               </div>
           </div>
-          <div class="read-card">
-            <img src="/Assets/img/book-solid.svg" alt="read-icon" class="read-icon">
+          <div class="read-card hidden">
+            <img src="/public/img/book-solid.svg" alt="read-icon" class="read-icon">
             <h3>Read</h3>
-              <div class="read-card-text">
-                <p>Pick From Best Sellers or Friend Recommendations</p>
+              <div class="read-card-text hidden">
+                <p>Pick From Best Sellers or Recommendations From Your Friends</p>
               </div>
           </div>
-          <div class="review-card">
-            <img src="/Assets/img/pen-to-square-regular.svg" alt="review-icon" class="review-icon">
+          <div class="review-card hidden">
+            <img src="/public/img/pen-to-square-regular.svg" alt="review-icon" class="review-icon">
             <h3>Review</h3>
-              <div class="review-card-text">
+              <div class="review-card-text hidden">
                 <p>Leave a Review And Let Others Know What You Thought of Your Reads</p>
               </div>
           </div>
-        </div>
-    </div>
+
     <!-- Main NavBar -->
     <nav class="navbar">
         <ul class="navbar-nav">
@@ -72,5 +78,9 @@
                 </a>
         </ul>
     </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.148.0/three.min.js">
+    </script>
+    <script src="./public/js/book.js">
+    </script>
 </body>
 </html>

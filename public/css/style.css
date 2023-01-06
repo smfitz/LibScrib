@@ -1,5 +1,7 @@
 /* Universal Elements */
+
 :root {
+    font-family: 'IMB Plex Sans';
     --text-primary: #003366;
     --text-secondary: #71b1c5;
     --bg-primary: #F0F2F3;
@@ -22,7 +24,14 @@ img {
     max-width: 100%;
 }
 
-body{
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+/* OLD HOME BODY STYLING INCASE OF REVERT */
+
+/* .home-body {
     background-image: url('/Assets/img/ugur-akdemir-XT-o5O458as-unsplash.jpg');
     background-color: var(--bg-secondary);
     background-repeat: no-repeat;
@@ -33,18 +42,45 @@ body{
     margin: 0;
     padding: 0;
     animation: transitionIn 0.75s;
-   
-    
+} */
+
+/* STYLING FOR 3JS ANIMATION */
+
+.container {
+    position: fixed;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
 }
 
-main {
-    margin-left: 5rem;
-    padding: 1rem;
+section.content {
+    width: 50%;
+    max-width: 500px;
+    padding: 32px;
+    position: relative;
+    z-index: 1;
 }
 
-/* Home page Header & Sub Header */
+.home-body {
+    color: var(--bg-primary);
+    font-family: 'IBM Plex Sans';
+    font-size: 42px;
+    line-height: 1.25;
+    min-height: calc(3000px + 100vh);
+    animation: transitionIn 0.75s;
+    background-color: #003366;
+    background-image: linear-gradient(#003366, #71b1c5); 
+}
 
-.mid-container {
+.scroll-icon {
+    height: 34px;
+    width: 34px;
+    filter: invert(100%);
+}
+
+/* OLD Home page Header & Sub Header KEEPING FOR REVERT */
+
+/* .mid-container {
     display: flex;
     flex-direction: column;
     align-items: right;
@@ -61,6 +97,101 @@ main {
 .home-sub-header {
     font-size: 1.5rem;
     color: var(--bg-primary);
+} */
+
+/* User Page Header & Sub Header */
+
+.user-head-container {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.user-header {
+    font-size: 4rem;
+    color: var(--bg-primary);
+}
+
+.user-sub-header {
+    font-size: 2.2rem;
+    color: var(--dark);
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.user-sub-header h4 {
+    border-bottom: 2px solid var(--dark);
+}
+
+/* User Page Container */
+
+.profile-cards {
+    color: var(--bg-primary);
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+}
+
+.user-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid transparent;
+    line-height: 1.5;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    max-width: 28rem;
+    max-height: 28rem;
+    min-height: 20rem;
+    font-size: 0.9rem;
+    background-color: var(--dark);
+    border-radius: 2rem;
+    animation: transitionIn 1s;
+}
+
+.user-info-card h3 {
+    display: flex;
+    text-align: center;
+    border-bottom: 2px solid var(--bg-primary);
+}
+
+.user-info-card-text {
+    display: flex;
+    /* TBD */
+}
+
+.recent-review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid transparent;
+    line-height: 1.5;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    max-width: 28rem;
+    max-height: 28rem;
+    min-height: 20rem;
+    font-size: 0.9rem;
+    background-color: var(--dark);
+    border-radius: 2rem;
+    animation: transitionIn 1s;
+}
+
+.recent-review-card h3 {
+    display: flex;
+    text-align: center; 
+    border-bottom: 2px solid var(--bg-primary);
+}
+
+.recent-review-text {
+    /* TBD */
+    display: flex;
 }
 
 /* Cursor Blinking After Sub Header */
@@ -83,149 +214,140 @@ main {
 
 /* Home Page Info Cards */
 
+.hidden {
+    opacity: 0;
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+}
+
 .home-info-cards {
     color: var(--bg-primary);
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    min-height: calc(3000px + 100vh);
+}
+
+h3 {
+    font-size: 2.8rem;
 }
 
 .search-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid transparent;
     line-height: 1.5;
-    font-size: 0.9rem;
     background-color: rgb(255, 255, 255 / 0.5);
     border-radius: 2rem;
     max-width: 18rem;
     max-height: 18rem;
     min-height: 18rem;
-    padding: 3rem;
-    margin: 2rem;
+    margin-left: 16rem;
+    margin-top: 16rem;
     animation: transitionIn 4s;
 }
 
 .search-icon {
     height: 34px;
     width: 34px;
-    margin: 20px;
+    margin-bottom: 1.5rem;
     filter: invert(100%);
 }
 
 .search-card-text {
-    opacity: 0;
-    transition: 400ms;
+    padding-top: 1.5rem;
+    display: inline;
+    transition-delay: 200ms;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
-.search-card:hover .search-card-text {
-    opacity: 1;
-}
-
-.search-card:hover {
-    transition: 400ms;
-    border: 3px solid var(--background);
-    backdrop-filter: blur(1.5px);
-
-}
 
 .read-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid transparent;
     line-height: 1.5;
-    font-size: 0.9rem;
     background-color: rgb(255, 255, 255 / 0.5);
     border-radius: 2rem;
-    max-width: 18rem;
+    max-width: 22rem;
     max-height: 18rem;
     min-height: 18rem;
-    padding: 3rem;
-    margin: 2rem;
+    margin-left: 16rem;
     animation: transitionIn 4s;
 }
 
 .read-icon {
     height: 34px;
     width: 34px;
-    margin: 20px;
+    margin-bottom: 1.5rem;
     filter: invert(100%);
 }
 
 .read-card-text {
-    opacity: 0;
-    transition: 400ms;
+    padding-top: 1.5rem;
+    display: inline;
+    transition-delay: 200ms;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
-.read-card:hover .read-card-text {
-    opacity: 1;
-}
-
-.read-card:hover {
-    transition: 400ms;
-    border: 3px solid var(--background);
-    backdrop-filter: blur(1.5px);
-}
 
 .review-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid transparent;
     line-height: 1.5;
-    font-size: 0.9rem;
     background-color: rgb(255, 255, 255 / 0.5);
     border-radius: 2rem;
-    max-width: 18rem;
+    max-width: 22rem;
     max-height: 18rem;
     min-height: 18rem;
-    padding: 3rem;
-    margin: 2rem;
+    margin-left: 16rem;
+    margin-bottom: 16rem;
     animation: transitionIn 4s;
 }
 
 .review-icon {
     height: 34px;
     width: 34px;
-    margin: 20px;
+    margin-bottom: 1.5rem;
     filter: invert(100%);
 }
-
+ 
 .review-card-text {
-    opacity: 0;
-    transition: 400ms;
-}
-
-.review-card:hover .review-card-text {
-    opacity: 1;
-}
-
-.review-card:hover {
-    transition: 400ms;
-    border: 3px solid var(--background);
-    backdrop-filter: blur(1.5px);
-}
-
-/* Search Page Header & Sub-Header */
-
-.header {
-    display: flex;
-    justify-content: center;
+    padding-top: 1.5rem;
+    display: inline;
+    transition-delay: 200ms;
+    font-size: 1.2rem;
     text-align: center;
-    background: #3d1abc;
-    color: white;
-    font-size: 26px;
 }
 
-.sub-header {
-    display: flex;
-    justify-content: center;
-    font-size: 1.4rem;
-    text-align: center;
+.button {
+     position:absolute;
+     right: 0px;
+     z-index: 9999;
+     width: xyz;
+     height: xyz;
+}
+
+/* User Page Styling */
+
+.user-body {
+    background-color: var(--bg-secondary);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+    animation: transitionIn 0.75s;
 }
 
 /* Nav Bar Styling */
@@ -237,7 +359,7 @@ main {
     width: 5rem;
     height: 100vh;
     position: fixed;
-    background-color: var(--text-primary);
+    background-image: linear-gradient(#71b1c5 , #71b1c5); 
     transition: 400ms ease;
 }
 
@@ -269,15 +391,15 @@ main {
     display: flex;
     align-items: center;
     height: 5rem;
-    color: var(--hoverColor);
+    color: var(--dark);
     text-decoration: none;
     transition: var(--transition-speed);
 }
 
 .nav-link:hover {
     filter: grayscale(0%) opacity(1);
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
+    background-color: var(--dark);
+    color: var(--bg-secondary);
     width: 100%;
 }
 
@@ -344,6 +466,8 @@ body::-webkit-scrollbar-thumb {
 #search-bar {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-right: auto;
 }
 
 .main-search {
@@ -364,10 +488,8 @@ body::-webkit-scrollbar-thumb {
 
 /* Main Search Button */
 
-.main-search-btn {
-    display: flex;
-    background-color: #FFFFFF;
-    justify-content: center;
+button {
+background-color: var(--primary) !important;
 }
  
 /* Footer */
@@ -398,6 +520,11 @@ footer {
     justify-content: center;
     text-align: center;
     padding: 4px;
+}
+
+footer {
+    margin-top: 100% !important;
+    display: flex;
 }
 
 /* Small Screen Navbar Support */
