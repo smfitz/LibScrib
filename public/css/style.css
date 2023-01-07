@@ -619,11 +619,14 @@ footer {
 .bestseller-header {
     font-size: 4rem;
     color: var(--bg-primary);
+    padding-left: 150px;
+   padding-top: 100px;
 }
 
 .bs-sub-header {
     font-size: 1.5rem;
     color: var(--bg-primary);
+    padding-left: 150px;
 }
 
 /* Book Grid */
