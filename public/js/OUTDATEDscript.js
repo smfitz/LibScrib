@@ -1,24 +1,21 @@
 var searchResults = [];
 var bestSellersList = [];
-// require('dotenv').config();
 
-
-// API_KEY
-var nytApiKey = "copy here";
-var googleApiKey = "copy here";
-
-$(`#submit`).on('click', function () {
+$(`#searchBtn`).on('click', function () {
   // stores the user search query in the variable 'bookTitle'
-  var bookTitle = $(`#search`).val();
+  var bookTitle = $(`#main-search`).val();
   // fetch data
   fetchBookByTitleGoogle(bookTitle);
 });
 
+// delete before pushing
+var NYT_API_KEY = ""
+var GOOGLE_API_KEY = ""
 
 // function to retrieve information for the user's requested book
 var fetchBookByTitleGoogle = function (bookTitle) {
   // concatenates the API call, the bookTitle variable, and the apiKey variable into the apiBookTitle variable
-  var apiBookTitle = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env}`;
+  var apiBookTitle = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${GOOGLE_API_KEY}`;
 
   // fetch request for the user's requested book
   fetch(apiBookTitle).then(function (response) {
@@ -46,6 +43,7 @@ var fetchBookByTitleGoogle = function (bookTitle) {
             // searchItem["description"] = data.items[i].searchInfo.textSnippet;
 
             searchResults.push(searchItem);
+            console.log(searchResults)
           }
         })
         .catch((error) => console.error("Fetch Error:", error));
@@ -87,7 +85,7 @@ var fetchBookByTitleGoogle = function (bookTitle) {
 
 // Best Seller List NYT
 var fetchBestSellersNYT = function () {
-  var apiBestSell = `https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=${nytApiKey}`
+  var apiBestSell = `https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=${NYT_API_KEY}`
 
   fetch(apiBestSell, {
     method: 'get',
