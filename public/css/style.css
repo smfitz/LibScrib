@@ -646,6 +646,19 @@ footer {
     
 }
 
+.bs_body {
+    background-image: url('/public/img/ugur-akdemir-XT-o5O458as-unsplash.jpg');
+    background-color: var(--bg-secondary);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+    animation: transitionIn 0.75s;
+} 
+
 .bestseller-header {
     font-size: 4rem;
     color: var(--bg-primary);
