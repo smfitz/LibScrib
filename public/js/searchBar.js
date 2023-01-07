@@ -7,6 +7,7 @@ async function googleSearch(event) {
   document.querySelector("#searchBtn").addEventListener("click", getInfo);
 
   async function getInfo(e) {
+    var searchResults = [""];
     e.preventDefault;
     const res = await fetch(baseUrl + `/` + bookTitle, {
       method: "GET",
@@ -22,17 +23,25 @@ async function googleSearch(event) {
           .json()
 
           .then(function (data) {
-            for (var i = 0; i <= data.items.length; i++) {
+            for (var i = 1; i <= data.items.length; i++) {
               console.log(`data`, data);
 
               var searchItem = {};
+
               searchItem["title"] = data.items[i].volumeInfo.title;
+
               searchItem["author"] = data.items[i].volumeInfo.authors[0];
-              searchItem["isbn"] =
-                data.items[i].volumeInfo.industryIdentifiers[1].identifier;
-                if (data.items[i].searchInfo.textSnippet === true) {
-              searchItem["description"] = data.items[i].searchInfo.textSnippet;
-                } else { data.items[i].searchInfo.textSnippet === "No description available"};
+
+              searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
+
+              if (data.items[i].volumeInfo.imageLinks === true) {
+                searchItem["image"] === data.items[i].volumeInfo.imageLinks.smallThumbnail;
+              } else { searchItem["image"] === "No image available" };
+
+              if (data.items[i].searchInfo.textSnippet === true) {
+                searchItem["description"] === data.items[i].searchInfo.textSnippet;
+              } else { searchItem["description"] === "No description available" };
+
               searchResults.push(searchItem);
               console.log(searchResults);
 
