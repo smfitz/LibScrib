@@ -26,9 +26,10 @@
     <div class="user-info-card">
         <h3>Account Details</h3>
           <div class="user-info-card-text">
-            <input class="username-input" type="text" placeholder="Username">
-            <input class="password-input" type="text" placeholder="Password">
-            <button class="user-button" type="button">Submit</button>
+            <input class="username-input" id="username-input" type="text" placeholder="Username">
+            <input class="password-input" id="password-input" type="text" placeholder="Password">
+            <input class="email-input" id="email-input" type="text" placeholder="Email">
+            <button class="user-button" id="createAccountButton" type="submit" onclick="saveAccount()" value="createAccount">Submit</button>
           </div>
       </div>
       <div class="recent-review-card">

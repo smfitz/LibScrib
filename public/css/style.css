@@ -166,7 +166,10 @@ section.content {
 
 .user-info-card-text {
     display: flex;
-    /* TBD */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .recent-review-card {
