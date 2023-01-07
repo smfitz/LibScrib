@@ -1,9 +1,12 @@
-const router = require('express').Router();
-const searchResults = require('../js/script');
+const router = require("express").Router();
+require("dotenv").config();
 
 // get all books
-router.get('/results', async (req, res) => {
-    res.render('all', {searchResults});
-  });
+router.get('/results/:book', async (req, res) => {
+  const { book } = req.params;
+
+  res.status(200).json(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${process.env.GOOGLE_API_KEY}`);
+
+});
 
 module.exports = router;
