@@ -1,5 +1,9 @@
 const router = require('express').Router();
+const { User } = require("../models");
+const withAuth = require('../utils/auth')
 
+
+// homepage route
 
 router.get('/', async (req, res) => {
     try {
@@ -9,6 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// search route
 router.get('/search', async (req, res) => {
     try {
         res.render('search');
@@ -17,6 +22,7 @@ router.get('/search', async (req, res) => {
     }
 });
 
+// bestseller route
 router.get('/bestsellers', async (req, res) => {
     try {
         res.render('bestsellers');
@@ -25,13 +31,24 @@ router.get('/bestsellers', async (req, res) => {
     }
 });
 
-router.get('/user', async (req, res) => {
+// signup+login+user
+router.get('/user', withAuth, async (req, res) => {
     try {
-        res.render('user');
-    } catch (err) {
+        const userData = await User.findAll({
+          attributes: { exclude: ['password'] },
+          order: [['name', 'ASC']],
+        });
+    
+        const users = userData.map((project) => project.get({ plain: true }));
+    
+        res.render('homepage', {
+          users,
+          logged_in: req.session.logged_in,
+        });
+      } catch (err) {
         res.status(500).json(err);
-    }
-});
+      }
+    });
 
 
 
