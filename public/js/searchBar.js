@@ -100,10 +100,12 @@ var bookStore = function (data) {
     var author = searchItem.author
     var title = searchItem.title
     var isbn = searchItem.isbn
+    // var description = searchItem.description
+    var image = searchItem.image
 
     const response = await fetch('/api/books', {
       method: 'POST',
-      body: JSON.stringify({ author, title, isbn }),
+      body: JSON.stringify({ author, title, isbn, image}),
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
@@ -129,6 +131,12 @@ var bookStore = function (data) {
     if (data.items[i].volumeInfo.industryIdentifiers) {
       searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
     } else { searchItem["isbn"] === "isbn unavailable" };
+
+    searchItem["image"] = data.items[i].volumeInfo.imageLinks.thumbnail
+
+
+    // searchItem["description"] === data.items[i].searchInfo.textSnippet;
+  
 
     bookAddDb(searchItem);
     console.log(searchItem);
