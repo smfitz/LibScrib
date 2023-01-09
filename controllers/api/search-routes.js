@@ -9,4 +9,11 @@ router.get('/results/:book', async (req, res) => {
 
 });
 
+// get NYT bestsellers
+router.get('/results', async (req, res) => {
+
+  res.status(200).json(`https://api.nytimes.com/svc/books/v3/lists/full-overview.json?${process.env.NYT_API_KEY}`);
+
+});
+
 module.exports = router;
