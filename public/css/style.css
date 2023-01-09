@@ -73,8 +73,6 @@ section.content {
 
 body {
     color: var(--bg-primary);
-    font-family: 'IBM Plex Sans';
-    /* font-size: 42px; */
     line-height: 1.25;
     min-height: calc(3000px + 100vh);
     animation: transitionIn 0.75s;
@@ -362,6 +360,28 @@ h3 {
      height: xyz;
 }
 
+.logout-btn {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: var(--bg-secondary);
+    color: var(--dark);
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.fa-right-to-bracket {
+    height: 34px;
+    width: 34px;
+    margin-bottom: 1rem;
+}
+
+
 /* User Page Styling */
 
 .user-body {
@@ -505,6 +525,12 @@ form p a {
 
 .nav-item:last-child {
     margin-top: auto;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.nav-item:nth-last-child(2){
+    margin-top: auto;
 }
 
 .nav-link {
@@ -531,7 +557,7 @@ form p a {
 
 .navbar:hover .link-text {
     display: block;
-    animation: transitionIn 1s;
+    animation: transitionIn 1.5s;
 }
 
 /* Hardcoded Icon Display */
@@ -566,6 +592,14 @@ form p a {
 
 .fa-user {
     padding: 1.8rem;
+}
+
+.navbar:hover .fa-right-to-bracket {
+    animation: transitionIn 1s;
+}
+
+.fa-right-to-bracket {
+    padding: 1.7rem;
 }
 
 /* Scrollbar Styling */

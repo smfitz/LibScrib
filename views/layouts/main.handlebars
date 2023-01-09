@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/3fa854029c.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
@@ -15,21 +14,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="/css/style.css" />
     <title>Home</title>
 </head>
 
-<body class="home-body">
-    {{!-- Should this be between head and body? --}}
+<body>
 
-    <div class="container">
-        <!-- ANIMATION -->
-    </div>
+<div class="container">
+    <!-- ANIMATION -->
+</div>
 
-    <div class="scroll">
-        <img src="/img/chevron-down-solid.svg" class="scroll-icon" alt="scroll-img">
-    </div>
+<div class="home-header">
+  <span class="box">
+    <h4 class="hidden">A Library Designed For Talking</h4>
+    <img src="/img/chevron-down-solid.svg" class="scroll-icon hidden" alt="scroll-icon">
+  </span>
+</div>
 
 
     {{{body}}}
@@ -59,13 +59,13 @@
                     <span class="link-text">Profile</span>
                     <i class="fa-solid fa-user"></i>
                 </a>
-            <li class="nav-item logout-btn">
-                <button id="logout" class="button is-danger">logout</button>
-            <li class="nav-item">
+            <li class="nav-item login">
                 <a href="/login" class="nav-link">
-                    <span class="link-text">Log In</span>
-                    <i class="fa-solid"></i>
+                    <span class="link-text">Login</span>
+                    <i class="fa-solid fa-right-to-bracket"></i>
                 </a>
+            <li class="nav-item logout-btn">
+                  <button id="logout" class="logout-btn is-danger"><span class="link-text">Logout</span></button>
         </ul>
     </nav>
 
