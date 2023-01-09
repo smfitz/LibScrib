@@ -33,8 +33,8 @@ var printSearchData = function (data) {
     console.log("WELCOME TO THE FORLOOP")
 
     var title = data.items[i].volumeInfo.title;
-    var author = data.items[i].volumeInfo.authors[1];
-    var isbn = data.items[i].volumeInfo.industryIdentifiers[0];
+    var author = data.items[i].volumeInfo.authors[0];
+    var isbn = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
     var imageLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 
     var col = document.createElement("div");
@@ -57,7 +57,7 @@ var printSearchData = function (data) {
     bookThumbnail.setAttribute("src", imageLink);
     
     // add link attribute
-    bookThumbnail.setAttribute("a")
+    // bookThumbnail.setAttribute("a")
 
     // add content to elements
     bookTitle.textContent = title;
