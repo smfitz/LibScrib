@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 // get book by isbn
 router.get('/:isbn', async (req, res) => {
     try{
-        const result = await Books.findByPk(req.params.isbn);
+        const result = await Books.findOne({where: {isbn: req.params.isbn}});
         if (result) {
             const book = result.get({plain:true});
             res.status(200).json(book);
