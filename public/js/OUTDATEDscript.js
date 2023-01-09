@@ -8,9 +8,6 @@ $(`#searchBtn`).on('click', function () {
   fetchBookByTitleGoogle(bookTitle);
 });
 
-// delete before pushing
-var NYT_API_KEY = ""
-var GOOGLE_API_KEY = ""
 
 // function to retrieve information for the user's requested book
 var fetchBookByTitleGoogle = function (bookTitle) {

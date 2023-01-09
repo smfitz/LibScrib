@@ -5,6 +5,9 @@ async function googleSearch(event) {
   const bookTitle = document.querySelector(".main-search").value;
   // const baseUrl = `http://localhost:3001/api/searches/results`;
 
+
+  console.log("Book title", bookTitle)
+
   var apiBookTitle = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}`;
 
   const response = await fetch(apiBookTitle, {
@@ -21,16 +24,17 @@ async function googleSearch(event) {
 var printSearchData = function (data) {
 
   console.log("printSearchData working")
-  console.log("data", data)
+  console.log("DATA", data)
 
   searchContainer.innerHTML = "";
 
-  for (var i = 0; i <= data.length; i++) {
+  for (var i = 0; i < 9; i++) {
 
-    var id = i + 1;
+    console.log("WELCOME TO THE FORLOOP")
+
     var title = data.items[i].volumeInfo.title;
     var author = data.items[i].volumeInfo.authors[1];
-    var isbn = data.items[i].industryIdentifiers[0];
+    var isbn = data.items[i].volumeInfo.industryIdentifiers[0];
     var imageLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 
     var col = document.createElement("div");
@@ -44,19 +48,29 @@ var printSearchData = function (data) {
     card.append(cardBody);
     cardBody.append(bookTitle, bookThumbnail, bookAuthor, bookIsbn);
 
-    col.setAttribute('class', 'col-md');
-    card.setAttribute('class', 'card bg-primary h-100 text-white');
-    cardBody.setAttribute('class', 'card-body p-2');
-    bookTitle.setAttribute('class', 'card-title');
-    bookAuthor.setAttribute('class', 'card-text');
-    bookIsbn.setAttribute('class', 'card-text');
-    bookThumbnail.setAttribute('src', imageLink);
+    col.setAttribute("class", "card-grid-space");
+    card.setAttribute("class", "card");
+    cardBody.setAttribute("class", "card-body");
+    bookTitle.setAttribute("class", "card-title");
+    bookAuthor.setAttribute("class", "card-text");
+    bookIsbn.setAttribute("class", "card-text");
+    bookThumbnail.setAttribute("src", imageLink);
+    
+    // add link attribute
+    bookThumbnail.setAttribute("a")
 
     // add content to elements
     bookTitle.textContent = title;
     bookAuthor.textContent = author;
     bookIsbn.textContent = isbn;
     
+    col.appendChild(card);
+    card.appendChild(cardBody);
+    cardBody.appendChild(bookTitle);
+    cardBody.appendChild(bookThumbnail);
+    cardBody.appendChild(bookAuthor);
+    cardBody.appendChild(bookIsbn);
+
     searchContainer.append(col);
 
 
@@ -134,3 +148,11 @@ document
       googleSearch();
     }
   });
+
+// document.addEventListener('DOMContentLoaded', function () {
+
+//   var bookTemplate = document.querySelector("#bookTemplate").innerHTML;
+
+//   var compliedBookTemplate = Handlebars.compile(bookTemplate);
+
+// }, false);
