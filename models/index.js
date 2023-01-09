@@ -1,6 +1,8 @@
 // import models
 const User = require('./User');
 const Review = require('./Reviews');
+const Books = require('./Books');
+
 
 // review belongsTo User
 Review.belongsTo(User, {
@@ -17,4 +19,5 @@ User.hasMany(Review, {
 module.exports = {
   User,
   Review,
+  Books,
 };

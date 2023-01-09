@@ -14,29 +14,35 @@
     <title>User Page</title>
 </head>
 <body class="user-body">
-    <div class="user-head-container">
-            <h1 class="user-header" id="user-header">LibScrib</h1>
-    </div>
-    <div class="user-sub-header">
-        <h4 class="user-sub-header">Your Profile</h4>
-    </div>
-
     <!-- Container -->
-  <div class="profile-cards">
-    <div class="user-info-card">
-        <h3>Account Details</h3>
-          <div class="user-info-card-text">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, adipisci. Incidunt ipsum reprehenderit sunt magni corrupti! Eaque quidem in, voluptates vitae recusandae quasi tempore asperiores debitis quibusdam ab nam similique.</p>
-          </div>
-      </div>
-      <div class="recent-review-card">
-        <h3>Recent Reviews</h3>
-          <div class="recent-review-text">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, adipisci. Incidunt ipsum reprehenderit sunt magni corrupti! Eaque quidem in, voluptates vitae recusandae quasi tempore asperiores debitis quibusdam ab nam similique.</p>
-          </div>
-      </div>
-  </div>
+    <div class="user-container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <input type="text" placeholder="Name">
+                    </div>
 
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <p>Lost Password <a href="#">Click Here</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign up</button>
+                    <button type="button" id="signinBtn" class="disable">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
 <!-- Main NavBar -->
@@ -64,5 +70,6 @@
                 </a>
         </ul>
     </nav>
+    <script src="public/js/index.js"></script>
 </body>
 </html>
