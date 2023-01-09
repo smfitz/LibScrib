@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const sequelize = require('./config/connect');
 // const mysql = require('mysql2');
-const { User, Review } = require('./Models');
+const { User, Review } = require('./models');
 const routes = require('./controllers');
 const port = process.env.PORT || 3001;
 
