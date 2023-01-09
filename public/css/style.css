@@ -1,6 +1,7 @@
-/* Universal Elements */
-
+Universal Elements
 :root {
+    --color: #3c3163;
+    --transition-time: 0.5s;
     font-family: 'IMB Plex Sans';
     --text-primary: #003366;
     --text-secondary: #71b1c5;
@@ -70,10 +71,10 @@ section.content {
     z-index: 1;
 }
 
-.home-body {
+body {
     color: var(--bg-primary);
     font-family: 'IBM Plex Sans';
-    font-size: 42px;
+    /* font-size: 42px; */
     line-height: 1.25;
     min-height: calc(3000px + 100vh);
     animation: transitionIn 0.75s;
@@ -777,10 +778,6 @@ body::-webkit-scrollbar-thumb {
 
 /*@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');*/
 
-:root {
-  --color: #3c3163;
-  --transition-time: 0.5s;
-}
 
 * {
   box-sizing:border-box;
