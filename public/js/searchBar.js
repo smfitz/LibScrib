@@ -35,12 +35,13 @@ var printSearchData = function (data) {
     var title = data.items[i].volumeInfo.title;
     var author = data.items[i].volumeInfo.authors[0];
     var isbn = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
-    var imageLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+    var imageLink = data.items[i].volumeInfo.imageLinks.thumbnail;
 
     var col = document.createElement("div");
     var card = document.createElement("div");
     var cardBody = document.createElement("div");
     var bookTitle = document.createElement("h5");
+    var link = document.createElement("a")
     var bookThumbnail = document.createElement("img");
     var bookAuthor = document.createElement("p");
     var bookIsbn = document.createElement("p");
@@ -54,10 +55,10 @@ var printSearchData = function (data) {
     bookTitle.setAttribute("class", "card-title");
     bookAuthor.setAttribute("class", "card-text");
     bookIsbn.setAttribute("class", "card-text");
+    link.setAttribute("href", "/review/" + isbn)
     bookThumbnail.setAttribute("src", imageLink);
+    bookThumbnail.setAttribute("height", "250px");
     
-    // add link attribute
-    // bookThumbnail.setAttribute("a")
 
     // add content to elements
     bookTitle.textContent = title;
@@ -67,7 +68,8 @@ var printSearchData = function (data) {
     col.appendChild(card);
     card.appendChild(cardBody);
     cardBody.appendChild(bookTitle);
-    cardBody.appendChild(bookThumbnail);
+    cardBody.appendChild(link);
+    link.appendChild(bookThumbnail);
     cardBody.appendChild(bookAuthor);
     cardBody.appendChild(bookIsbn);
 
