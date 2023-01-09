@@ -1,10 +1,10 @@
 var searchResults = [];
+// var searchContainer = document.querySelector("#");
 
 async function googleSearch(event) {
   const bookTitle = document.querySelector(".main-search").value;
   // const baseUrl = `http://localhost:3001/api/searches/results`;
 
-  
   var apiBookTitle = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}`;
 
   const response = await fetch(apiBookTitle, {
@@ -14,7 +14,7 @@ async function googleSearch(event) {
     },
   });
   const data = await response.json();
-  console.log(data);
+  console.log("data", data);
 
   // async function getInfo(e) {
   //   var searchResults = [""];
@@ -31,23 +31,23 @@ async function googleSearch(event) {
   //       console.log(`response`, response);
   //       response
   //         .json()
-          
+
   //         .then(function (data) {
   //           for (var i = 1; i <= data.items.length; i++) {
   //             console.log(`data`, data);
-              
+
   //             var searchItem = {};
-              
+
   //             searchItem["title"] = data.items[i].volumeInfo.title;
 
   //             searchItem["author"] = data.items[i].volumeInfo.authors[0];
-              
+
   //             searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
-              
+
   //             if (data.items[i].volumeInfo.imageLinks === true) {
   //               searchItem["image"] === data.items[i].volumeInfo.imageLinks.smallThumbnail;
   //             } else { searchItem["image"] === "No image available" };
-              
+
   //             if (data.items[i].searchInfo.textSnippet === true) {
   //               searchItem["description"] === data.items[i].searchInfo.textSnippet;
   //             } else { searchItem["description"] === "No description available" };
@@ -62,6 +62,12 @@ async function googleSearch(event) {
   //         .catch((error) => console.error("Fetch Error:", error));
   //     }
   //   });
-  }
+}
 
-document.querySelector("#searchBtn").addEventListener("click", googleSearch);
+document
+  .querySelector("#searchBar")
+  .addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      googleSearch();
+    }
+  });

@@ -1,31 +1,47 @@
 <!--Header & Sub-Header-->
-    <div class="mid-img-container">
-      <div class="mid-container"> 
           <h1 class="search-header" id="search-header">LibScrib</h1>
               <h4 class="search-sub-header" id="search-sub-header">Search for millions of books online, get suggestions, and leave reviews on books you've already read.</h4>
+        <div class="body-body">
+          <div class="search-bar">
+            <input id="searchBar" class="main-search" type="text" placeholder="Search by Title/Author/ISBN">
+              <a href="#">
+                <i class="fas fa-search"></i>
+              </a>
           </div>
-          <div id="search-bar">
-            <input class="main-search" type="text" placeholder="Search by Title/Author/ISBN">
-            <button type="button" id="searchBtn" class="btn btn-primary"><i class="fas fa-search"></i></button>
-          </div>
-      </div>  
+        </div>
       
-
-
-
     <!-- Container for Main Search Result Card -->
-  <section class="container-main-1" id="main-1">
-    <section class="row" id="row-1">
-      <section class="col-hidden" id="searchedBook">
-        <section class="main-card">
-          <img src="" class="main-img-card searchImages" id="searchedBookImage">
-          <section class="card-body" id="searchedBookBody">
-            <h4 class="card-title" id="seachedBookTitle">Search Results</h4>
+    <container class="search-container">
+      <div class="search-results">
+        <section class="row" id="1">
+          <section class="card-1 hidden" id="card-1">
+            <img src="" class="searchImage" id="searchedBookImg">
+            <section class="card-1-body" id="searchedBookBody">
+              <h4 class="card-1-title" id="searchedBookTitle"></h4>
+            </section>
           </section>
         </section>
-      </section>
-    </section>
-  </section>
+
+        <section class="row" id="2">
+          <section class="card-2 hidden" id="card-2">
+            <img src="" class="searchImage" id="searchedBookImg">
+            <section class="card-2-body" id="searchedBookBody">
+              <h4 class="card-2-title" id="searchedBookTitle"></h4>
+            </section>
+          </section>
+        </section>
+
+        <section class="row" id="3">
+          <section class="card-3 hidden" id="card-3">
+            <img src="" class="searchImage" id="searchedBookImg">
+            <section class="card-3-body" id="searchedBookBody">
+              <h4 class="card-3-title" id="searchedBookTitle"></h4>
+            </section>
+          </section>
+        </section>
+      </div>
+    </container>
+
 
   <script src="./js/searchBar.js"></script>
   <script src="./js/index.js"></script>
