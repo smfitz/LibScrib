@@ -73,15 +73,31 @@ var printSearchData = function (data) {
 //   // complete API call
 //   var apiUrl = await res.json();
 
-//   fetch(apiUrl).then(function (response) {
-//     if (response.ok) {
-//       console.log(`response`, response);
-//       response
-//         .json()
+  //   fetch(apiUrl).then(function (response) {
+  //     if (response.ok) {
+  //       console.log(`response`, response);
+  //       response
+  //         .json()
 
-//         .then(function (data) {
-//           for (var i = 1; i <= data.items.length; i++) {
-//             console.log(`data`, data);
+  //         .then(function (data) {
+  //           for (var i = 1; i <= data.items.length; i++) {
+  //             console.log(`data`, data);
+
+  //             var searchItem = {};
+
+  //             searchItem["title"] = data.items[i].volumeInfo.title;
+
+  //             searchItem["author"] = data.items[i].volumeInfo.authors[0];
+
+  //             searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
+
+  //             if (data.items[i].volumeInfo.imageLinks === true) {
+  //               searchItem["image"] === data.items[i].volumeInfo.imageLinks.smallThumbnail;
+  //             } else { searchItem["image"] === "No image available" };
+
+  //             if (data.items[i].searchInfo.textSnippet === true) {
+  //               searchItem["description"] === data.items[i].searchInfo.textSnippet;
+  //             } else { searchItem["description"] === "No description available" };
 
 //             var searchItem = {};
 
@@ -110,8 +126,11 @@ var printSearchData = function (data) {
 //     }
 //   });
 
-document.querySelector("#searchBar").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    googleSearch();
-  }
-});
+
+document
+  .querySelector("#searchBar")
+  .addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      googleSearch();
+    }
+  });
