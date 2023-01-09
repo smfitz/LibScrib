@@ -887,12 +887,11 @@ img:hover {
     align-items: center;
     background: transparent;
     backdrop-filter: blur(10px);
-    border: 2px solid var(--bg-secondary);
     border-radius: 10px;
     max-width: 50rem;
     min-width: 50rem;
     min-height: 30rem;
-    padding-left: 0;
+    padding: 0;
     margin: 0;
 }
 
@@ -903,11 +902,14 @@ img:hover {
 .book-description {
     color: var(--bg-primary);
     max-width: 25rem;
-    padding-left: 2rem;
-    padding-bottom: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.book-description p {
+    padding-left: 1.6rem;
+}
+
+.book-description h5 {
+    padding-left: 1rem;
 }
 
 .book-review-desc {
@@ -923,6 +925,30 @@ img:hover {
 .btn-primary {
     display: flex;
     justify-content: center;
+    border: none;
+    outline: none;
+    background: var(--bg-secondary);
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--dark);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.form-input {
+    background: var(--bg-primary);
+    border: 3px solid var(--bg-secondary);
+    outline: none;
+    border-radius: 8px;
+    min-width: 20rem;
+    padding: 0.4rem 0.4rem 10rem 0.4rem;
+    margin-top: auto;
 }
 
 /* OLD BEST SELLERS PAGE STYLING */
