@@ -1,12 +1,12 @@
 # LibScrib - Project 2 Group 4
 
-What Our Application Does:<br> 
+What Our Application Does:
 
 Our application is designed to allow users to search for information about a desired book. This application grants the user unfettered access to the New York Times Bestseller database.
 When the user enters in the title of a book, the application searches through the NYTBS Database and finds all pertinent information about the book. Users can read the book's synopsis, 
 peruse the reviews and even leave a review for the book themselves.
 
-What Technologies We Used:<br>
+What Technologies We Used:
 
 MySQL - Database
 Bcrypt - Password-Hashing
@@ -19,7 +19,7 @@ nodemon - Node.js development tool
 sequelize - Node.js Object Relational Mapper
 
 
-Challenges:<br> 
+Challenges:
 
 Famliarize with handlebars
 Rendering data and connecting between the front end and backend
@@ -55,7 +55,7 @@ Open 'http://localhost:3001
 
 MIT License
 
-Copyright (c) [2023] [fullname]
+Copyright (c) [2023] [LibScrib]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
