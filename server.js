@@ -5,7 +5,7 @@ const sequelize = require('./config/connect');
 // const mysql = require('mysql2');
 const { User, Review } = require('./Models');
 const routes = require('./controllers');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
@@ -39,9 +39,9 @@ app.use(routes);
 
 
 
-app.get('/', (req, res) => {
-    res.send("The server is live");
-});
+// app.get('/', (req, res) => {
+//     res.send("The server is live");
+// });
 
 sequelize.sync({ force:false }).then(() => {
     app.listen(port);
