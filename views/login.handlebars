@@ -1,6 +1,6 @@
 <h2>Login</h2>
 
-<form class="form login-form">
+{{!-- <form class="form login-form">
     <div class="form-group">
         <label for="email-login">email:</label>
         <input class="form-input" type="text" id="email-login" />
@@ -12,6 +12,30 @@
     <div class="form-group">
         <button class="btn btn-primary" type="submit">login</button>
     </div>
-</form>
+</form> --}}
+    <div class="user-container">
+        <div class="form-box">
+            <h1 id="title">Sign In</h1>
+            <form class="login-form">
+                <div class="input-group">
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email-login" placeholder="Email">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password-login" placeholder="Password">
+                    </div>
+                    <p><a href="/signup">Don't have an account? Create one here</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="submit" id="signinBtn">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 <script src="/js/login.js"></script>
+{{!-- <script src="./js/index.js"></script> --}}
