@@ -21,12 +21,12 @@ let signinBtn = document.getElementById("signinBtn");
 let nameField = document.getElementById("nameField");
 let title = document.getElementById("title");
 
-signinBtn.onclick = function() {
-    nameField.style.maxHeight = "0";
-    title.innerHTML = "Sign In"
-}
+// signinBtn.onclick = function() {
+//     nameField.style.maxHeight = "0";
+//     title.innerHTML = "Sign In"
+// }
 
-signupBtn.onclick = function() {
-    nameField.style.maxHeight = "65px"
-    title.innerHTML = "Sign Up"
-}
+// signupBtn.onclick = function() {
+//     nameField.style.maxHeight = "65px"
+//     title.innerHTML = "Sign Up"
+// }
