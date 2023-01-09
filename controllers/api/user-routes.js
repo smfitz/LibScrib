@@ -15,17 +15,21 @@ router.post("/login", async (req, res) => {
         const validPassword = await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
+            console.log("wrong password");
             res
                 .status(400)
                 .json({ message: "Incorrect email or password, please try again" });
+            
             return;
         }
 
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
+            console.log(userData, `logged in: ${req.session.logged_in}` )
 
             res.json({ user: userData, message: "You are now logged in!" });
+            
         });
 
     } catch (err) {
@@ -40,9 +44,10 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
+            console.log(userData);
 
             res.json({ user: userData, message: "You are now logged in!" });
-            console.log(userData, `logged in: ${logged_in}` )
+            
         });
     }
     catch (err) {
@@ -130,7 +135,9 @@ router.delete('/:id', async (req, res) => {
 // User Logout
 router.post('/logout', async (req, res) => {
     req.session.logged_in = false;
+    console.log(`${req.session.logged_in}`)
     req.session.destroy()
+    console.log("goodbye")
     res.json({ message: "Logged out" })
 })
 
