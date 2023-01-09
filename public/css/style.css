@@ -21,10 +21,6 @@
     display: none;
 } */
 
-img {
-    max-width: 100%;
-}
-
 main {
     margin-left: 5rem;
     padding: 1rem;
@@ -80,14 +76,13 @@ body {
     background-image: linear-gradient(#003366, #71b1c5); 
 }
 
-.scroll-icon {
-    height: 50px;
-    opacity: 50%;
-    position: absolute;
-    filter: invert(100%);
-    padding-left: 25rem;
-    animation: transitionIn 3s;
-
+.fa-sort-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 12rem;
+    padding-top: 2rem;
+    animation: transitionIn 6s;
 }
 
 .home-header {
@@ -341,7 +336,6 @@ h3 {
     height: 34px;
     width: 34px;
     margin-bottom: 1.5rem;
-    filter: invert(100%);
 }
  
 .review-card-text {
@@ -697,17 +691,18 @@ body::-webkit-scrollbar-thumb {
 
 /* Book Images */
 
-.search-results {
+.search-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    padding-left: 4rem;
 }
 
-.search-results .book-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.search-results {
+    display: grid;
+    grid-template-columns: 24rem 24rem 24rem;
+    grid-template-rows: 32rem 32rem 32rem;
 }
+
 
 /* Small Screen Navbar Support */
 
@@ -817,6 +812,21 @@ body::-webkit-scrollbar-thumb {
   box-sizing:border-box;
 }
 
+img {
+    min-width: 328px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 1;
+}
+
+img:hover {
+    cursor: pointer;
+    opacity: 0.25;
+    transition: 0.5s;
+}
 
 .cards-wrapper {
   display: grid;
@@ -825,37 +835,84 @@ body::-webkit-scrollbar-thumb {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 4rem;
   padding: 4rem;
+  padding-left: 6rem;
   margin: 0 auto;
   width: max-content;
 }
 
 .card {
-  /*font-family: 'Heebo';*/
-  --bg-filter-opacity: 0.5;
-  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 20em;
-  width: 15em;
-  font-size: 1.5em;
-  color: white;
-  border-radius: 1em;
-  padding: 1em;
-  /*margin: 2em;*/
-  display: flex;
-  align-items: flex-end;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 0 5em -1em black;
-  transition: all, var(--transition-time);
-  position: relative;
-  overflow: hidden;
-  border: 10px solid #ccc;
-  text-decoration: none;
+    background: transparent;
+    max-height: 500px;
+    max-width: 328px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5em -1em var(--dark);
 }
 
-.card:hover {
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: var(--bg-primary);
+    font-size: 3rem;
+}
+
+.card-text {
+    display: none;
+}
+
+/* .card-text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    color: var(--bg-primary);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card-text:hover {
+    visibility: visible;
+    opacity: 1;
+} */
+
+/* 
+.card-title {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    color: var(--bg-primary);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card-title:hover {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-secondary);
+    cursor: pointer;
+} */
+
+
+/* .card:hover {
   transform: rotate(0);
 }
-
 
 .card .tags {
   font-size: 0.75em;
@@ -865,14 +922,31 @@ body::-webkit-scrollbar-thumb {
   margin-right: 0.5em;
   line-height: 1.5em;
   transition: all, var(--transition-time);
-}
+} */
 
-.card:hover .tags {
+/* .card {
+  background: transparent;
+  height: 20em;
+  width: 15em;
+  font-size: 1.5em;
+  color: var(--bg-primary);
+  border-radius: 0.4em;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em -1em var(--dark);
+  transition: all, var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 4px solid var(--bg-secondary);
+  text-decoration: none;
+} */
+
+/* .card:hover .tags {
   background: var(--color);
   color: white;
 }
-
-
 
 .card:before, .card:after {
   content: '';
@@ -905,7 +979,7 @@ body::-webkit-scrollbar-thumb {
 
 .card:hover:before, .card:hover:after {
   transform: scale(1);
-}
+} */
 
 .card-grid-space .num {
   font-size: 3em;

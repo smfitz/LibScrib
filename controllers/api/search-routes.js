@@ -7,6 +7,7 @@ router.get('/results/:book', async (req, res) => {
 
   res.status(200).json(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${process.env.GOOGLE_API_KEY}`);
 
+  
 });
 
 // get NYT bestsellers

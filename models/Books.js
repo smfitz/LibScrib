@@ -8,9 +8,14 @@ class Books extends Model {
 
 Books.init(
   {
-    isbn: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
+    isbn: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     title: {
