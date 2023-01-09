@@ -1,4 +1,5 @@
-var searchResults = [];
+// var searchResults = [];
+
 var searchContainer = document.querySelector("#mainSearchContainer");
 
 async function googleSearch(event) {
@@ -19,7 +20,9 @@ async function googleSearch(event) {
   const data = await response.json();
 
   printSearchData(data);
+  bookStore(data)
 }
+
 
 var printSearchData = function (data) {
 
@@ -51,20 +54,29 @@ var printSearchData = function (data) {
 
     col.setAttribute("class", "card-grid-space");
     card.setAttribute("class", "card");
+    card.setAttribute("id", "card");
     cardBody.setAttribute("class", "card-body");
+
     bookTitle.setAttribute("class", "card-title");
+    bookTitle.setAttribute("id", "bookTit");
+
     bookAuthor.setAttribute("class", "card-text");
+    bookAuthor.setAttribute("id", "bookAuth");
+
     bookIsbn.setAttribute("class", "card-text");
+    bookIsbn.setAttribute("id", "bookIsbn");
     link.setAttribute("href", "/review/" + isbn)
+
     bookThumbnail.setAttribute("src", imageLink);
+    bookThumbnail.setAttribute("id", "bookImg");
     bookThumbnail.setAttribute("height", "250px");
-    
+
 
     // add content to elements
     bookTitle.textContent = title;
     bookAuthor.textContent = author;
     bookIsbn.textContent = isbn;
-    
+
     col.appendChild(card);
     card.appendChild(cardBody);
     cardBody.appendChild(bookTitle);
@@ -79,6 +91,52 @@ var printSearchData = function (data) {
   }
 };
 
+
+
+// // store to sql?
+var bookStore = function (data) {
+  async function bookAddDb(searchItem) {
+
+    var author = searchItem.author
+    var title = searchItem.title
+    var isbn = searchItem.isbn
+
+    const response = await fetch('/api/books', {
+      method: 'POST',
+      body: JSON.stringify({ author, title, isbn }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      console.log("added to db")
+
+    } else {
+      alert('Failed to add data');
+    }
+  }
+  for (var i = 0; i < 10; i++) {
+
+    var searchItem = {};
+
+    if (data.items[i].volumeInfo.title) {
+      searchItem["title"] = data.items[i].volumeInfo.title;
+    } else { searchItem["title"] === "title unavailable" };
+
+
+    searchItem["author"] = data.items[i].volumeInfo.authors[0];
+
+
+    if (data.items[i].volumeInfo.industryIdentifiers) {
+      searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
+    } else { searchItem["isbn"] === "isbn unavailable" };
+
+    console.log(searchItem);
+    bookAddDb(searchItem);
+
+  }
+}
+
+
+
 // async function getInfo(e) {
 //   var searchResults = [""];
 //   e.preventDefault;
@@ -89,31 +147,31 @@ var printSearchData = function (data) {
 //   // complete API call
 //   var apiUrl = await res.json();
 
-  //   fetch(apiUrl).then(function (response) {
-  //     if (response.ok) {
-  //       console.log(`response`, response);
-  //       response
-  //         .json()
+//   fetch(apiUrl).then(function (response) {
+//     if (response.ok) {
+//       console.log(`response`, response);
+//       response
+//         .json()
 
-  //         .then(function (data) {
-  //           for (var i = 1; i <= data.items.length; i++) {
-  //             console.log(`data`, data);
+//         .then(function (data) {
+//           for (var i = 1; i <= data.items.length; i++) {
+//             console.log(`data`, data);
 
-  //             var searchItem = {};
+//             var searchItem = {};
 
-  //             searchItem["title"] = data.items[i].volumeInfo.title;
+//             searchItem["title"] = data.items[i].volumeInfo.title;
 
-  //             searchItem["author"] = data.items[i].volumeInfo.authors[0];
+//             searchItem["author"] = data.items[i].volumeInfo.authors[0];
 
-  //             searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
+//             searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
 
-  //             if (data.items[i].volumeInfo.imageLinks === true) {
-  //               searchItem["image"] === data.items[i].volumeInfo.imageLinks.smallThumbnail;
-  //             } else { searchItem["image"] === "No image available" };
+//             if (data.items[i].volumeInfo.imageLinks === true) {
+//               searchItem["image"] === data.items[i].volumeInfo.imageLinks.smallThumbnail;
+//             } else { searchItem["image"] === "No image available" };
 
-  //             if (data.items[i].searchInfo.textSnippet === true) {
-  //               searchItem["description"] === data.items[i].searchInfo.textSnippet;
-  //             } else { searchItem["description"] === "No description available" };
+//             if (data.items[i].searchInfo.textSnippet === true) {
+//               searchItem["description"] === data.items[i].searchInfo.textSnippet;
+//             } else { searchItem["description"] === "No description available" };
 
 //             var searchItem = {};
 
@@ -158,3 +216,4 @@ document
 //   var compliedBookTemplate = Handlebars.compile(bookTemplate);
 
 // }, false);
+
