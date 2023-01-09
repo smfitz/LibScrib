@@ -31,7 +31,7 @@ var printSearchData = function (data) {
 
   searchContainer.innerHTML = "";
 
-  for (var i = 0; i < 9; i++) {
+  for (var i = 0; i <6; i++) {
 
     console.log("WELCOME TO THE FORLOOP")
 
@@ -110,10 +110,11 @@ var bookStore = function (data) {
       console.log("added to db")
 
     } else {
+      console.log("sorry charlie no book for u")
       alert('Failed to add data');
     }
   }
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 6 ; i++) {
 
     var searchItem = {};
 
@@ -129,8 +130,9 @@ var bookStore = function (data) {
       searchItem["isbn"] = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
     } else { searchItem["isbn"] === "isbn unavailable" };
 
-    console.log(searchItem);
     bookAddDb(searchItem);
+    console.log(searchItem);
+
 
   }
 }
