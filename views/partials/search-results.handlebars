@@ -1,0 +1,17 @@
+<form class="card-grid-space option">
+    <div class="card">
+        <div class="card-body">
+            <input type="hidden" name="vol-id" value="{{id}}" />
+            <button type="submit" class="card-btn btn-primary">
+                <h5 class="card-title">
+                    {{volumeInfo.title}}
+                </h5>
+                {{!-- <a href="search/review/{{id}}"></a> --}}
+
+                <img src="{{volumeInfo.imageLinks.thumbnail}}" id="bookImg">
+                <p class="card-text" id="author">{{volumeInfo.authors.[0]}}</p>
+                <p class="card-text" id="isbn">{{volumeInfo.industryIdentifiers.[0].identifier}}</p>
+            </button>
+        </div>
+    </div>
+</form>

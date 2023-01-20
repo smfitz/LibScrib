@@ -14,24 +14,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// search route
-router.get("/search", async (req, res) => {
-  try {
-    res.render("search");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// book detail route
-router.get("/review/:isbn", async (req, res) => {
-  try {
-    res.render("review");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // bestseller route
 router.get("/bestsellers", async (req, res) => {
   try {
