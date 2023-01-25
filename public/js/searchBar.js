@@ -9,13 +9,13 @@ const searchHandler = async (event) => {
     const bookTitle = document.querySelector('input[name="search"]').value.trim();
     console.log(bookTitle);
 
-    const response = await fetch(`/search/results/${bookTitle}`, {
+    const response = await fetch(`/results/${bookTitle}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-        document.location.replace(`/search/results/${bookTitle}`);
+        document.location.replace(`/results/${bookTitle}`);
         console.log("book results found")
     } else {
         alert('No results found');
