@@ -6,22 +6,31 @@
     reviews on books you've already read.</h4>
 </div>
 
-{{!-- <div class="body-body">
-  <form class="search-bar">
-    <input id="searchBar" class="main-search" name="search" type="text" placeholder="Search by Title/Author/ISBN">
-    <button type="submit" class="search-btn">
-      <i class="fas fa-search"></i>
-    </button>
-  </form>
-</div> --}}
-
-
 <!-- Container for Main Search Result Card -->
 <container class="search-container">
   <div id="mainSearchContainer" class="search-results">
     {{#each data.items as |book| }}
+  
+<div class="card-grid-space">
+    <div class="card">
+        <div class="card-body option">
+            <div class="option">
 
-    {{> search-results book }}
+                <button class="card-btn btn-primary option" id="btn">
+                    <h5 class="card-title">
+                        {{volumeInfo.title}}
+                        <input type="hidden" name="vol-id" value="{{id}}" />
+                    </h5>
+
+
+                    <img src="{{volumeInfo.imageLinks.thumbnail}}" id="bookImg">
+                    <p class="card-text" id="author">{{volumeInfo.authors.[0]}}</p>
+                    <p class="card-text" id="isbn">{{volumeInfo.industryIdentifiers.[0].identifier}}</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
     {{/each}}
   </div>
