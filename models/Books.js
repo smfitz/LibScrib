@@ -22,9 +22,9 @@ Books.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // description: {
-    //   type: DataTypes.STRING,
-    // },
+    description: {
+      type: DataTypes.STRING,
+    },
     author: {
       type: DataTypes.STRING,
     },

@@ -1,25 +1,25 @@
 <div class="body-body">
     <div class="review-container">
-      <div class="book-img">
-            <img class="book-image" src="">
-      </div>
-      <div class="book-review-desc">
-        <div class="book-description">
-            <h5 class="book-desc">Description:</h5>
-            <p class="book-description">The Namesake is the story of two generations of the Gangulis, a family of Indian immigrants to the United States. When we first meet Ashoke and Ashima Ganguli they are living in a small apartment in Cambridge, Massachusetts, about to welcome their first child into the world.</p>
+
+        <div class="book-img">
+            <img class="book-image" src="{{data.volumeInfo.imageLinks.thumbnail}}">
         </div>
-      <div class="book-review">
-            <form class="form review-form">
-                <div class="form-group">
-                    <label for="review-text">Leave a review:</label>
-                    <input class="form-input" type="text" id="review-text" />
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Post</button>
-                </div>
-            </form>
+        <div class="book-review-desc">
+            <div class="book-description">
+                <h5 class="book-desc">Description:</h5>
+                <p class="book-description">{{data.volumeInfo.description}}</p>
+            </div>
+            <div class="book-review">
+                <form class="form review-form">
+                    <div class="form-group">
+                        <label for="review-text">Leave a review:</label>
+                        <input class="form-input" type="text" id="review-text" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Post</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<script src="/js/reviewing.js"></script>
